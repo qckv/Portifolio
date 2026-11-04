@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gusthavo Vannucchi – Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f4f4;--surface:#fff;--ink:#111;--muted:#5c5c5c;--line:#d9d9d9;--accent:#111;--accent2:#555;--accent-ink:#fff;--code:#111;--code-ink:#e6e6e6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e0e;--surface:#1a1a1a;--ink:#f2f2f2;--muted:#a3a3a3;--line:#2e2e2e;--accent:#f2f2f2;--accent2:#bdbdbd;--accent-ink:#0e0e0e;--code:#000;--code-ink:#e6e6e6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e0e;--surface:#1a1a1a;--ink:#f2f2f2;--muted:#a3a3a3;--line:#2e2e2e;--accent:#f2f2f2;--accent2:#bdbdbd;--accent-ink:#0e0e0e;--code:#000;--code-ink:#e6e6e6;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+#bar{position:fixed;left:0;top:env(safe-area-inset-top,0px);height:3px;width:0;background:var(--accent);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{max-width:1000px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:6px;overflow-x:auto}
+nav b{margin-right:auto;font-weight:800;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s}
+nav a:hover,nav a.on{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+main{max-width:1000px;margin:0 auto;padding:0 22px 40px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:72px 0 40px}
+h1{font-size:clamp(2.3rem,6.2vw,4rem);line-height:1.03;margin:0 0 18px;font-weight:800;letter-spacing:-.035em}
+h2{font-size:1.5rem;margin:0 0 22px;font-weight:800;letter-spacing:-.02em}
+h3{margin:0 0 4px;font-size:1.02rem}
+p{margin:0 0 12px;max-width:66ch}
+.lead{font-size:1.1rem;color:var(--muted)}
+section{padding:56px 0 8px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent);color:var(--accent);transition:transform .2s,box-shadow .2s}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px -8px var(--accent)}
+.code{background:var(--code);color:var(--code-ink);border-radius:12px;box-shadow:0 24px 50px -24px rgba(0,0,0,.45);overflow:hidden}
+.dots{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.dots i{width:11px;height:11px;border-radius:50%;background:#777}.dots i:nth-child(2){background:#999}.dots i:nth-child(3){background:#bbb}
+.code pre{margin:0;padding:18px 20px;font:400 .82rem/1.7 "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;min-height:11.5em}
+.cur{display:inline-block;width:.55em;height:1.05em;background:var(--accent2);vertical-align:text-bottom;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;transition:transform .25s,border-color .25s}
+.box:hover{transform:translateY(-3px);border-color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:99px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2);margin-bottom:12px}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent2);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent2)}100%{box-shadow:0 0 0 9px transparent}}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.92rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:.8rem;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font:500 .88rem "JetBrains Mono",ui-monospace,monospace;transition:transform .2s,background .2s,color .2s}
+.chip:hover{transform:translateY(-3px);background:var(--accent);color:var(--accent-ink)}
+.group{margin-bottom:22px}.group h3{color:var(--muted);font-weight:600;margin-bottom:10px;font-size:.92rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.tl{position:relative;margin:0;padding:0 0 0 24px;list-style:none;border-left:2px solid var(--line)}
+.tl li{position:relative;margin-bottom:18px}
+.tl li::before{content:"";position:absolute;left:-31px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.when{color:var(--muted);font-size:.86rem;margin:0 0 4px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.hero>*{animation:up .8s ease both}.hero>*:nth-child(2){animation-delay:.2s}
+@keyframes up{from{opacity:0;transform:translateY(20px)}}
+footer{border-top:1px solid var(--line);padding:30px 22px 40px;text-align:center;color:var(--muted);font-size:.88rem}
+@media (max-width:760px){.hero,.cols{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.hero{padding-top:44px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><nav>
+<b>GV</b>
+<a href="#sobre">Sobre</a><a href="#projeto">Projeto</a><a href="#stack">Tecnologias</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
+<button id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+</nav></header>
+<main>
+<div class="hero">
+<div>
+<h1>Gusthavo Ferreira Vannucchi</h1>
+<p class="lead">Estudante de Ciência da Computação em busca da primeira oportunidade em desenvolvimento de sistemas. Programo em Python, JavaScript e C# e construo projetos próprios para aprender na prática.</p>
+<div class="links">
+<a class="btn main" href="mailto:gusthavovannucchi@gmail.com">Enviar e-mail</a>
+<a class="btn" href="https://www.linkedin.com/in/gusthavo-vannucchi-54b59b37a/">LinkedIn</a>
+</div>
+</div>
+<div class="code" aria-label="Resumo em código">
+<div class="dots"><i></i><i></i><i></i></div>
+<pre id="type" data-text='class Dev:
+    nome = "Gusthavo Vannucchi"
+    curso = "Ciência da Computação"
+    stack = ["Python", "JavaScript", "C#", "SQL"]
+    inglês = "avançado"
+    busco = "primeira vaga em TI"'>class Dev:
+    nome = "Gusthavo Vannucchi"
+    curso = "Ciência da Computação"
+    stack = ["Python", "JavaScript", "C#", "SQL"]
+    inglês = "avançado"
+    busco = "primeira vaga em TI"</pre>
+</div>
+</div>
+
+<section id="sobre" class="rv">
+<h2>Sobre mim</h2>
+<p>Curso Ciência da Computação na UNIP Anchieta e fiz o técnico em Análise e Desenvolvimento de Sistemas na ETEC. Meu inglês avançado me permite ler documentação e acompanhar a comunidade técnica sem barreira.</p>
+<p>Antes de entrar em TI, trabalhei em varejo, logística e rotinas administrativas. Essa experiência me ensinou a lidar com prazo, atendimento ao público e processos que precisam funcionar todos os dias, e eu levo isso para o jeito como desenvolvo software.</p>
+</section>
+
+<section id="projeto" class="rv">
+<h2>Projeto em destaque</h2>
+<div class="box">
+<span class="pill">Em desenvolvimento</span>
+<h3>App de controle de gastos</h3>
+<p>Aplicativo para computador que funciona como uma planilha de gastos automatizada. A inspiração vem de apps como Pierre e Oinc. O objetivo é reduzir o trabalho manual de quem controla o orçamento em planilhas.</p>
+<ol class="steps">
+<li><b>Você informa</b><br>Só os dados base: o que entra e o que sai.</li>
+<li><b>O app calcula</b><br>Totais e saldos são feitos sozinhos.</li>
+<li><b>Você se situa</b><br>Vê como estão seus gastos no mês.</li>
+</ol>
+</div>
+</section>
+
+<section id="stack" class="rv">
+<h2>Tecnologias</h2>
+<div class="group"><h3>Linguagens</h3><div class="chips"><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">C#</span><span class="chip">SQL</span></div></div>
+<div class="group"><h3>Web e aplicativos</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Node.js</span><span class="chip">.NET MAUI</span></div></div>
+<div class="group"><h3>Ferramentas</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Excel, Word e PowerPoint</span></div></div>
+</section>
+
+<section id="trajetoria" class="rv">
+<div class="cols">
+<div>
+<h2>Formação</h2>
+<ul class="tl">
+<li><h3>Ciência da Computação</h3><p class="when">UNIP Anchieta · em andamento</p></li>
+<li><h3>Análise e Desenvolvimento de Sistemas</h3><p class="when">Ensino técnico · ETEC</p></li>
+<li><h3>Ensino Médio</h3><p class="when">Concluído em 2024</p></li>
+</ul>
+</div>
+<div>
+<h2>Experiência</h2>
+<ul class="tl">
+<li><h3>Operador de Loja e Caixa · Adidas</h3><p class="when">Set/2025 a jan/2026</p><p>Atendimento ao cliente e operação de caixa.</p></li>
+<li><h3>Auxiliar Operacional e Administrativo · CSI Cargo</h3><p class="when">Mar/2025 a out/2026</p><p>Apoio às rotinas operacionais e administrativas.</p></li>
+<li><h3>Logística, Estoque e Administrativo · JVD Sorocaba</h3><p class="when">Set/2024 a fev/2025</p><p>Controle de estoque e tarefas administrativas.</p></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="contato" class="rv">
+<h2>Vamos conversar</h2>
+<p>Aberto a vagas de estágio e júnior em desenvolvimento de sistemas.</p>
+<div class="links">
+<a class="btn main" href="mailto:gusthavovannucchi@gmail.com">gusthavovannucchi@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/gusthavo-vannucchi-54b59b37a/">LinkedIn</a>
+</div>
+</section>
+</main>
+<footer>Gusthavo Ferreira Vannucchi · São Paulo, SP</footer>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById("theme");
+try{var t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
+btn.addEventListener("click",function(){
+var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+var n=dark?"light":"dark";root.setAttribute("data-theme",n);
+try{localStorage.setItem("theme",n)}catch(e){}
+});
+var bar=document.getElementById("bar");
+addEventListener("scroll",function(){var h=root.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+"%"},{passive:true});
+var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(s){reduce?s.classList.add("in"):io.observe(s)});
+var links=[].slice.call(document.querySelectorAll("nav a"));
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll("section[id]").forEach(function(s){so.observe(s)});
+var pre=document.getElementById("type"),full=pre.getAttribute("data-text");
+if(!reduce){pre.textContent="";var i=0;
+(function tick(){pre.textContent=full.slice(0,i);var c=document.createElement("span");c.className="cur";pre.appendChild(c);
+if(i<full.length){i++;setTimeout(tick,28)}})();}
+})();
+</script>
+</body>
+</html>
